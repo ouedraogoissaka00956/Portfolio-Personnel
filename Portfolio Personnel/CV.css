@@ -1,0 +1,54 @@
+ .containercv {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .image {
+    background-color: rgb(13, 80, 57);
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-left: 30px solid rgb(33, 194, 140);
+    border-radius: 20px;
+
+  }
+  
+  .image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+  }
+  
+  .info {
+    flex-grow: 1;
+    padding: 30px;
+    text-align: center;
+  }
+  
+  .info h1 {
+    margin-top: 0;
+    color: rgb(13, 80, 57);
+  }
+  
+  .info h2 {
+    margin-top: 30px;
+    font-size: 18px;
+    color: rgb(13, 80, 57);
+  }
+  
+  .info ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .info li {
+    margin-bottom: 10px;
+  }
+  
+a,i {
+    color: rgb(13, 80, 57);
+}
+a:hover{
+    color: rgb(33, 194, 140);
+}

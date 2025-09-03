@@ -1,0 +1,59 @@
+.containerpropos {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      background-color: #f0f0f0;
+    }
+
+    .image-card {
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgb(33, 194, 140);
+      display: flex;
+      align-items: center;
+      padding: 30px;
+    }
+
+    .image-image {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-right: 30px;
+    }
+
+    .image-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .propos-content h2 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      color: rgb(13, 80, 57);
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    .propos-content p {
+      margin: 0 px;
+      padding: 10 px;
+      color: #000000;
+      font-size: 1.5rem;
+    }
+
+    .propos-content a {
+      display:inline-block;
+      background-color: rgb(13, 80, 57); 
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      margin-top: 20px;
+    }
+    .propos-content a:hover {
+      background-color: rgb(33, 194, 140);
+      color: black;
+    }

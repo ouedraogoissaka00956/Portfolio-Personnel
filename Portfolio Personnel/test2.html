@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulaire de Contact</title>
+</head>
+<body>
+    <form id="contact-form">
+        <label for="name">Nom :</label>
+        <input type="text" id="nom" name="nom" required><br><br>
+        
+        <label for="email">Email :</label>
+        <input type="email" id="email" name="email" required><br><br>
+        
+        <label for="message">Message :</label>
+        <textarea id="message" name="message" required></textarea><br><br>
+        
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("BASXnd_fksn3NkLJt"); // Remplacez par votre User ID d'EmailJS
+        })();
+
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Empêche le rechargement de la page
+
+            emailjs.sendForm('service_3sh4z0a', 'template_8oy5kbr', this)
+                .then(function() {
+                    alert('Message envoyé avec succès !!');
+                }, function(error) {
+                    alert('Échec de l\'envoi de l\'email. Erreur: ' + JSON.stringify(error));
+                });
+        });
+    </script>
+</body>
+</html>

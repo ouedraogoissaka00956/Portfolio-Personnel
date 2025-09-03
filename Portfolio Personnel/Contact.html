@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="Js.js"></script>
+    <title>Portfolio Personnel</title>
+</head>
+<body>
+    <header>
+        <h1>Issaka Ouedraogo</h1>
+        <nav>
+            <ul>
+                <li><a href="Acceuil.html">Accueil</a></li>
+                <li><a href="APropos.html">À propos</a></li>
+                <li><a href="Competences.html">Compétences</a></li>
+                <li><a href="Projets.html">Projets</a></li>
+                <li><a href="Activites.html">Activites Sportives & Loisirs</a></li>
+                <li><a href="Contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="form">
+      <div class="picturecontact">
+        <img src="Image/contact.jpg" alt="contact">
+      </div>
+        <div class="containercontact">
+            <h1 class="none">Contact</h1>
+            <div class="contact">
+                <p>Pour plus d'informations vous pouvez nous joindre sur le numéro ou à travers le formulaire:</p>
+                <p>
+                    Numéro de téléphone : 
+                    <a href="tel:+22665213618"><i class="fas fa-phone"></i> 65213618</a> 
+                </p>
+                <p>
+                    Ou contactez-nous sur WhatsApp : 
+                    <a href="https://wa.me/+22671616736" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+                </p>
+            </div>
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="prenom">Veuillez entrer votre prénom *</label>
+                    <input type="text" id="name" name="name" >
+                </div>
+                <div class="form-group">
+                    <label for="nom">Veuillez entrer votre nom *</label>
+                    <input type="text" id="nom" name="nom" >
+                </div>
+                <div class="form-group">
+                    <label for="sujet">Votre sujet *</label>
+                    <input type="text" id="title" name="sujet" >
+                </div>
+                <div class="form-group">
+                    <label for="message">Écrivez votre message *</label>
+                    <textarea id="message" name="message" ></textarea>
+                </div>
+                <button type="submit">Envoyer</button>
+            </form>
+        </div>
+    </div> 
+
+    <footer>
+    &copy; Issaka Ouedraogo  Tous droits réservés.
+    <div class="social-media">
+        <a href="https://www.facebook.com/profile.php?id=100025575191780" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.instagram.com/issaka5230?igsh=MTh1ZWY5NmluMTVsYg==" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+
+
+<script>
+ 
+  const form = document.getElementById('contact-form');
+
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+
+  const prenom = document.getElementById('name').value;
+  const nom = document.getElementById('nom').value;
+  const sujet = document.getElementById('title').value;
+  const message = document.getElementById('message').value;
+
+  if (!prenom) {
+    alert('Veuillez entrer votre prénom.');
+    return;
+  }
+
+  if (!nom) {
+    alert('Veuillez entrer votre nom.');
+    return;
+  }
+
+  if (!sujet) {
+    alert('Veuillez entrer le sujet de votre message.');
+    return;
+  }
+
+  if (!message) {
+    alert('Veuillez écrire votre message.');
+    return;
+  }
+
+  (function(){
+    emailjs.init("BASXnd_fksn3NkLJt");
+  })();
+
+  emailjs.sendForm('service_3sh4z0a', 'template_8oy5kbr', event.target)
+    .then(function() {
+      alert('Message envoyé avec succès !!');
+      form.reset();
+    }, function(error) {
+      alert('Échec de l\'envoi de l\'email. Erreur: ' + JSON.stringify(error));
+    });
+});
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+.containeract {
+      max-width: 1200px;
+      margin: 2rem auto;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      text-align: center;
+    }
+
+    .act{
+        text-align: center;
+        color: rgb(13, 80, 57);
+    }
+    .activite {
+      width: 30%;
+      box-shadow: 0 0 20px rgb(33, 194, 140);
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 1rem;
+      margin-bottom: 2rem;
+      border-radius: 20px;
+    }
+
+    .activite h2 {
+      margin-top: 0;
+    }
+
+   .containeract img{
+        width: 300px;
+        height: 150px;
+        border-radius: 10px;
+    }
+
